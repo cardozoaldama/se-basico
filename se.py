@@ -1,14 +1,18 @@
 # Definición de la base de conocimiento (reglas)
 reglas = [
-    {"if": ["llueve"], "then": "Está lloviendo"},
-    {"if": ["soleado"], "then": "Hace sol"},
-    {"if": ["nublado"], "then": "Está nublado"},
     {"if": ["llueve", "frío"], "then": "Está lloviendo y hace frío"},
-    {"if": ["soleado", "calor"], "then": "Hace sol y hace calor"}
+    {"if": ["llueve", "templado"], "then": "Está lloviendo y hace un clima agradable"},
+    {"if": ["llueve", "calor"], "then": "Está lloviendo, pero hace calor"},
+    {"if": ["soleado", "frío"], "then": "Hace sol, pero hace frío"},
+    {"if": ["soleado", "templado"], "then": "Hace un hermoso día soleado"},
+    {"if": ["soleado", "calor"], "then": "Hace sol y calor"},
+    {"if": ["nublado", "frío"], "then": "Está nublado y hace frío"},
+    {"if": ["nublado", "templado"], "then": "Está nublado, pero con un clima agradable"},
+    {"if": ["nublado", "calor"], "then": "Está nublado y hace calor"}
 ]
 
 # Hechos iniciales (input del usuario)
-hechos = ["llueve", "frío"]
+hechos = ["llueve", "calor"]
 
 # Motor de inferencia
 def inferir_clima(reglas, hechos):
@@ -28,4 +32,3 @@ if clima_actual:
     print("El clima actual es:", ", ".join(clima_actual))
 else:
     print("No se pudo determinar el clima actual.")
-
