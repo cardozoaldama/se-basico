@@ -20,6 +20,7 @@ while respuesta == 'si':
     condiciones = input("Condiciones (e.g., soleado, frío): ").split(',')
     resultado = input("Resultado (e.g., Hace sol, pero hace frío): ")
     
+    # Agregar la nueva regla a la base de conocimiento
     regla = {"if": [condicion.strip() for condicion in condiciones], "then": resultado}
     reglas.append(regla)
     
