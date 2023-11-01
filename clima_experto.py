@@ -11,10 +11,16 @@ reglas = [
     {"if": ["nublado", "calor"], "then": "Está nublado y hace calor"}
 ]
 
-# Hechos iniciales (input del usuario)
-hechos = ["llueve", "calor"]
+# Pedir al usuario que ingrese hechos iniciales
+print("Por favor, ingresa los hechos iniciales uno por uno (presiona Enter después de cada uno).")
+hechos = []
+while True:
+    hecho = input("Hecho inicial (o presiona Enter para finalizar): ")
+    if not hecho:
+        break
+    hechos.append(hecho)
 
-# Motor de inferencia
+# Motor de inferencia (sin cambios)
 def inferir_clima(reglas, hechos):
     clima_inferido = []
 
