@@ -20,7 +20,7 @@ while True:
         break
     hechos.append(hecho)
 
-# Motor de inferencia (sin cambios)
+# Motor de inferencia
 def inferir_clima(reglas, hechos):
     clima_inferido = []
 
@@ -30,11 +30,14 @@ def inferir_clima(reglas, hechos):
 
     return clima_inferido
 
-# Ejecución del motor de inferencia
-clima_actual = inferir_clima(reglas, hechos)
+try:
+    # Ejecución del motor de inferencia
+    clima_actual = inferir_clima(reglas, hechos)
 
-# Resultado
-if clima_actual:
-    print("El clima actual es:", ", ".join(clima_actual))
-else:
-    print("No se pudo determinar el clima actual.")
+    # Resultado
+    if clima_actual:
+        print("El clima actual es:", ", ".join(clima_actual))
+    else:
+        print("No se pudo determinar el clima actual.")
+except Exception as e:
+    print("Error inesperado:", e)
