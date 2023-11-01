@@ -32,11 +32,13 @@ def inferir_clima(reglas, hechos):
 
 try:
     # Ejecución del motor de inferencia
-    clima_actual = inferir_clima(reglas, hechos)
+    resultados = inferir_clima(reglas, hechos)
 
     # Resultado
-    if clima_actual:
-        print("El clima actual es:", ", ".join(clima_actual))
+    if resultados:
+        print("Los resultados posibles del clima actual son:")
+        for resultado in resultados:
+            print("- " + resultado)
     else:
         print("No se pudo determinar el clima actual.")
 except Exception as e:
